@@ -15,10 +15,22 @@ const navbar = () => {
                           </Link>
                     </li>
                     <Navlinks/>
-              </ul>
-              <div className="md:block hidden">
-                  <Button></Button>
+                </ul>
+                <div className="md:block hidden">
+                    <Button></Button>
+                </div>
+              {/* mobile nav */}
+              <ul className={`md:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4`}>
+                    <li>
+                          <Link href="/" className="py-7 px-3 inline-block">
+                              Home
+                          </Link>
+                    </li>
+                    <Navlinks/>
+              <div className="py-5">
+                  <Button/>
               </div>
+              </ul>
           </div>
     </nav>
   )
