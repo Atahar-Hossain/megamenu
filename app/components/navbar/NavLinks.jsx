@@ -1,72 +1,24 @@
 import React from 'react'
 import Link from 'next/link'
+import { links } from './Mylinks'
+
 const NavLinks = () => {
-    const links = [
-        {
-            name: "Men", id: 1, submenu: true, sublinks: [
-                {
-                    Head: "TopWear",
-                    sublink: [
-                        {name:"T-Shirt", link:"/", id:1.1},
-                        {name:"Casual Shirts", link:"/", id:1.2},
-                        {name:"Formal Shirts", link:"/", id:1.3},
-                        {name:"Regular Fit", link:"/", id:1.4},
-                    ]
-                },
-                {
-                    Head: "Bottomwear",
-                    sublink: [
-                        {name:"T-Shirt", link:"/", id:1.1},
-                        {name:"Casual Shirts", link:"/", id:1.2},
-                        {name:"Formal Shirts", link:"/", id:1.3},
-                        {name:"Regular Fit", link:"/", id:1.4},
-                    ]
-                },
-                {
-                    Head: "Tshirt",
-                    sublink: [
-                        {name:"T-Shirt", link:"/", id:1.1},
-                        {name:"Casual Shirts", link:"/", id:1.2},
-                        {name:"Formal Shirts", link:"/", id:1.3},
-                        {name:"Regular Fit", link:"/", id:1.4},
-                    ]
-                },
-                {
-                    Head: "Polo shirt",
-                    sublink: [
-                        {name:"T-Shirt", link:"/", id:1.1},
-                        {name:"Casual Shirts", link:"/", id:1.2},
-                        {name:"Formal Shirts", link:"/", id:1.3},
-                        {name:"Regular Fit", link:"/", id:1.4},
-                    ]
-                },
-                {
-                    Head: "Jeans",
-                    sublink: [
-                        {name:"T-Shirt", link:"/", id:1.1},
-                        {name:"Casual Shirts", link:"/", id:1.2},
-                        {name:"Formal Shirts", link:"/", id:1.3},
-                        {name:"Regular Fit", link:"/", id:1.4},
-                    ]
-                }
-        ] },
-        { name: "Women", id: 2 },
-        { name: "Kid's", id: 3 }]
+    
   return (
       <>
           {links.map((link) => (
               <div key={link.id}>
-                  <div className='px-3 text-left md:cursor-pointer'>
+                  <div className='px-3 text-left md:cursor-pointer group'>
                       <h2 className="py-7">{link.name}</h2>
                       {link.submenu && (
                           <div>
-                              <div className='absolute top-20'>
+                              <div className='absolute top-16 hidden group-hover:md:block hover:md:block'>
                                   <div>
                                       <div className='py-3'>
                                           <div className='w-4 h-4 mt-1 left-3 rotate-45 absolute bg-white'></div>
                                       </div>
                                   </div>
-                                  <div className='bg-white p-3.5 grid gap-20 px-20 grid-cols-3 grid-rows-3'>
+                                  <div className='bg-white p-3.5 grid gap-5 px-20 grid-cols-3'>
                                       {link.sublinks.map((mysublinks) => (
                                           <div key={link.id}>
                                               <h2 className='text-[22px] font-bold uppercase'>{ mysublinks.Head}</h2>
@@ -83,6 +35,23 @@ const NavLinks = () => {
                               </div>
                           </div>
                       )}
+                  </div>
+                  {/* mobile menu */}
+                  <div>
+                      {link.sublinks.map((slinks) => (
+                          <div>
+                              <div>
+                                  <h1 className='py-4 pl-7 font-semibold md:pr-0 pr-5'>{slinks.Head}</h1>
+                                  <div>
+                                      {slinks.sublink.map((slink) => (
+                                          <li className='py-3 pl-14'>
+                                              <Link href={slink.link}>{ slink.name}</Link>
+                                          </li>
+                                      ))}
+                                  </div>
+                              </div>
+                          </div>
+                      ))}
                   </div>
             </div>
         ))}
