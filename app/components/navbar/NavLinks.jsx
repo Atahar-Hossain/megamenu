@@ -12,7 +12,43 @@ const NavLinks = () => {
                         {name:"Formal Shirts", link:"/", id:1.3},
                         {name:"Regular Fit", link:"/", id:1.4},
                     ]
-            }
+                },
+                {
+                    Head: "Bottomwear",
+                    sublink: [
+                        {name:"T-Shirt", link:"/", id:1.1},
+                        {name:"Casual Shirts", link:"/", id:1.2},
+                        {name:"Formal Shirts", link:"/", id:1.3},
+                        {name:"Regular Fit", link:"/", id:1.4},
+                    ]
+                },
+                {
+                    Head: "Tshirt",
+                    sublink: [
+                        {name:"T-Shirt", link:"/", id:1.1},
+                        {name:"Casual Shirts", link:"/", id:1.2},
+                        {name:"Formal Shirts", link:"/", id:1.3},
+                        {name:"Regular Fit", link:"/", id:1.4},
+                    ]
+                },
+                {
+                    Head: "Polo shirt",
+                    sublink: [
+                        {name:"T-Shirt", link:"/", id:1.1},
+                        {name:"Casual Shirts", link:"/", id:1.2},
+                        {name:"Formal Shirts", link:"/", id:1.3},
+                        {name:"Regular Fit", link:"/", id:1.4},
+                    ]
+                },
+                {
+                    Head: "Jeans",
+                    sublink: [
+                        {name:"T-Shirt", link:"/", id:1.1},
+                        {name:"Casual Shirts", link:"/", id:1.2},
+                        {name:"Formal Shirts", link:"/", id:1.3},
+                        {name:"Regular Fit", link:"/", id:1.4},
+                    ]
+                }
         ] },
         { name: "Women", id: 2 },
         { name: "Kid's", id: 3 }]
@@ -30,7 +66,7 @@ const NavLinks = () => {
                                           <div className='w-4 h-4 mt-1 left-3 rotate-45 absolute bg-white'></div>
                                       </div>
                                   </div>
-                                  <div className='bg-white p-3.5'>
+                                  <div className='bg-white p-3.5 grid gap-20 px-20 grid-cols-3 grid-rows-3'>
                                       {link.sublinks.map((mysublinks) => (
                                           <div key={link.id}>
                                               <h2 className='text-[22px] font-bold uppercase'>{ mysublinks.Head}</h2>
